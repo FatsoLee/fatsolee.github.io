@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-27T13:13:14.436Z</updated>
+  <updated>2017-04-29T01:57:11.959Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo+githubpage命令</title>
+    <link href="http://yoursite.com/2017/04/29/hexo+githubpage%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/04/29/hexo+githubpage命令/</id>
+    <published>2017-04-29T01:54:10.861Z</published>
+    <updated>2017-04-29T01:57:11.959Z</updated>
+    
+    <content type="html"><![CDATA[<p><br></p>
+<blockquote>
+<p>生成和部署</p>
+</blockquote>
+<pre><code>C:\Users\Administrator&gt;F:
+F:\&gt;cd hexo
+
+F:\hexo&gt;hexo g
+INFO  Start processing
+INFO  Files loaded in 399 ms
+INFO  Generated: atom.xml
+INFO  Generated: content.json
+INFO  12 files generated in 346 ms
+
+F:\hexo&gt;hexo s
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+</code></pre><p><br></p>
+<blockquote>
+<p> 本地博客更改上传时运行该脚本<br><br> 第一次才需执行下面的命令</p>
+</blockquote>
+<pre><code>cd e:/hexo/blog
+git clone https://github.com/mesalee/mesalee.github.io.git .deploy/mesalee.github.io
+</code></pre><p><br></p>
+<blockquote>
+<p>只是修改提交的话，执行下面的命令即可（进入到/blog里）<br><br>或者直接运行deploy.sh文件</p>
+</blockquote>
+<pre><code>hexo generate
+cp -r ../public/* .deploy/mesalee.github.io
+cd .deploy/mesalee.github.io
+git add .
+git commit -m &quot;update&quot;
+git push origin master
+</code></pre><p><br></p>
+<blockquote>
+<p>最后执行hexo d命令</p>
+</blockquote>
+<pre><code>F:\hexo&gt;hexo d
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+</code></pre><h3 id="附deploy-sh书写"><a href="#附deploy-sh书写" class="headerlink" title="附deploy.sh书写"></a>附deploy.sh书写</h3><pre><code>hexo generate
+cp -r ../public/* .deploy/mesalee.github.io
+cd .deploy/mesalee.github.io
+git add .
+git commit -m &quot;update&quot;
+git push origin master
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成和部署&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;C:\Users\Administrator&amp;gt;F:
+F:\&amp;gt;cd hexo
+
+F:\hexo&amp;gt;hexo g
+INFO  Start pr
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>软件工程上课笔记</title>
@@ -85,9 +158,10 @@
     <link href="http://yoursite.com/2017/04/27/Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/04/27/Oracle学习笔记/</id>
     <published>2017-04-27T13:03:11.406Z</published>
-    <updated>2017-04-27T13:02:26.882Z</updated>
+    <updated>2017-04-29T02:04:38.083Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
+    <content type="html"><![CDATA[<p><br></p>
+<blockquote>
 <p><strong>一般使用Oracle，，只需要启动这两个服务：OracleServiceORCL和OracleOraDb11g_home1TNSListener<br></strong></p>
 <p><strong><em>简易方法：将以下代码保存成”.bat“文件或”.cmd“文件,直接打开服务</em></strong><br><br><strong>@echo off<br><br>net start oracleserviceorcl<br><br>net start oracleoradb11g_home1tnslistener<br><br>pause<br></strong></p>
 <p><strong>如果需要使用Database Control -orcl(浏览器登录)，则需要开启OracleDBConsoleORCL服务,通过访问<a href="https://localhost:1158/em" target="_blank" rel="external">https://localhost:1158/em</a><br></strong></p>
@@ -104,9 +178,10 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;一般使用Oracle，，只需要启动这两个服务：OracleServiceORCL和OracleOraDb11g_home1TNSListener&lt;br&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;简易方法：将以下代码保
+&lt;p&gt;&lt;strong&gt;&lt;em
     
     </summary>
     
@@ -118,9 +193,10 @@
     <link href="http://yoursite.com/2017/04/27/Git%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/04/27/Git使用/</id>
     <published>2017-04-27T12:58:15.539Z</published>
-    <updated>2017-04-27T13:00:33.082Z</updated>
+    <updated>2017-04-29T02:05:53.328Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="一、本地库同步到远程库"><a href="#一、本地库同步到远程库" class="headerlink" title="一、本地库同步到远程库"></a>一、本地库同步到远程库</h3><p>步骤：<br></p>
+    <content type="html"><![CDATA[<p><br></p>
+<h3 id="一、本地库同步到远程库"><a href="#一、本地库同步到远程库" class="headerlink" title="一、本地库同步到远程库"></a>一、本地库同步到远程库</h3><p>步骤：<br></p>
 <ol>
 <li>git init</li>
 <li>git remote add origin git@github.com:michaelliao/learngit.git<strong>&lt;!上面的michaelliao替换成你自己的GitHub账户名&gt;</strong></li>
@@ -132,9 +208,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;一、本地库同步到远程库&quot;&gt;&lt;a href=&quot;#一、本地库同步到远程库&quot; class=&quot;headerlink&quot; title=&quot;一、本地库同步到远程库&quot;&gt;&lt;/a&gt;一、本地库同步到远程库&lt;/h3&gt;&lt;p&gt;步骤：&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;一、本地库同步到远程库&quot;&gt;&lt;a href=&quot;#一、本地库同步到远程库&quot; class=&quot;headerlink&quot; title=&quot;一、本地库同步到远程库&quot;&gt;&lt;/a&gt;一、本地库同步到远程库&lt;/h3&gt;&lt;p&gt;步骤：&lt;br&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;git init&lt;/li&gt;
+&lt;li&gt;g
     
     </summary>
     
@@ -146,9 +223,10 @@
     <link href="http://yoursite.com/2017/04/27/Android%E5%AE%9E%E7%8E%B0%E4%BE%A7%E6%BB%91/"/>
     <id>http://yoursite.com/2017/04/27/Android实现侧滑/</id>
     <published>2017-04-27T12:39:06.519Z</published>
-    <updated>2017-04-27T12:58:59.791Z</updated>
+    <updated>2017-04-29T01:57:42.245Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="一般的侧滑的实现"><a href="#一般的侧滑的实现" class="headerlink" title="一般的侧滑的实现"></a>一般的侧滑的实现</h2><ol>
+    <content type="html"><![CDATA[<p><br></p>
+<h2 id="一般的侧滑的实现"><a href="#一般的侧滑的实现" class="headerlink" title="一般的侧滑的实现"></a>一般的侧滑的实现</h2><ol>
 <li>ViewGroup Menu + Content</li>
 <li>onTouchEvent</li>
 <li>MOVE:ViewGroup的leftMargin</li>
@@ -166,9 +244,9 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;一般的侧滑的实现&quot;&gt;&lt;a href=&quot;#一般的侧滑的实现&quot; class=&quot;headerlink&quot; title=&quot;一般的侧滑的实现&quot;&gt;&lt;/a&gt;一般的侧滑的实现&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;ViewGroup Menu + Content&lt;/li&gt;
-&lt;li&gt;onTouc
+      &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;一般的侧滑的实现&quot;&gt;&lt;a href=&quot;#一般的侧滑的实现&quot; class=&quot;headerlink&quot; title=&quot;一般的侧滑的实现&quot;&gt;&lt;/a&gt;一般的侧滑的实现&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;ViewGroup Menu + Content&lt;/li
     
     </summary>
     
@@ -180,9 +258,10 @@
     <link href="http://yoursite.com/2017/03/20/GitHub%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2017/03/20/GitHub上搭建博客/</id>
     <published>2017-03-20T15:57:15.134Z</published>
-    <updated>2017-03-26T14:02:51.700Z</updated>
+    <updated>2017-04-29T01:57:35.100Z</updated>
     
-    <content type="html"><![CDATA[<ol>
+    <content type="html"><![CDATA[<p><br></p>
+<ol>
 <li>利用本地编辑器编写博客后维护网站其他页面</li>
 <li>使用Jekyll-Bootstrap在本地测试网站功能</li>
 <li>使用Git客户端工具上传模板和页面文件</li>
@@ -192,11 +271,12 @@
     
     <summary type="html">
     
-      &lt;ol&gt;
+      &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;利用本地编辑器编写博客后维护网站其他页面&lt;/li&gt;
 &lt;li&gt;使用Jekyll-Bootstrap在本地测试网站功能&lt;/li&gt;
 &lt;li&gt;使用Git客户端工具上传模板和页面文件&lt;/li&gt;
-&lt;li&gt;Git Server会用jekyll转化你的模板，并生成静态页面&lt;/l
+&lt;li&gt;Git Server会用jekyll转化你的模
     
     </summary>
     

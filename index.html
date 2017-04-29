@@ -158,6 +158,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hexo+githubpage命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/29/hexo+githubpage命令/">hexo+githubpage命令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/29/hexo+githubpage命令/" class="archive-article-date">
+  	<time datetime="2017-04-29T01:54:10.861Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><br></p>
+<blockquote>
+<p>生成和部署</p>
+</blockquote>
+<pre><code>C:\Users\Administrator&gt;F:
+F:\&gt;cd hexo
+
+F:\hexo&gt;hexo g
+INFO  Start processing
+INFO  Files loaded in 399 ms
+INFO  Generated: atom.xml
+INFO  Generated: content.json
+INFO  12 files generated in 346 ms
+
+F:\hexo&gt;hexo s
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+</code></pre><p><br></p>
+<blockquote>
+<p> 本地博客更改上传时运行该脚本<br><br> 第一次才需执行下面的命令</p>
+</blockquote>
+<pre><code>cd e:/hexo/blog
+git clone https://github.com/mesalee/mesalee.github.io.git .deploy/mesalee.github.io
+</code></pre><p><br></p>
+<blockquote>
+<p>只是修改提交的话，执行下面的命令即可（进入到/blog里）<br><br>或者直接运行deploy.sh文件</p>
+</blockquote>
+<pre><code>hexo generate
+cp -r ../public/* .deploy/mesalee.github.io
+cd .deploy/mesalee.github.io
+git add .
+git commit -m &quot;update&quot;
+git push origin master
+</code></pre><p><br></p>
+<blockquote>
+<p>最后执行hexo d命令</p>
+</blockquote>
+<pre><code>F:\hexo&gt;hexo d
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+</code></pre><h3 id="附deploy-sh书写"><a href="#附deploy-sh书写" class="headerlink" title="附deploy.sh书写"></a>附deploy.sh书写</h3><pre><code>hexo generate
+cp -r ../public/* .deploy/mesalee.github.io
+cd .deploy/mesalee.github.io
+git add .
+git commit -m &quot;update&quot;
+git push origin master
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/29/hexo+githubpage命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-软件工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -274,7 +371,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <p><br></p>
+<blockquote>
 <p><strong>一般使用Oracle，，只需要启动这两个服务：OracleServiceORCL和OracleOraDb11g_home1TNSListener<br></strong></p>
 <p><strong><em>简易方法：将以下代码保存成”.bat“文件或”.cmd“文件,直接打开服务</em></strong><br><br><strong>@echo off<br><br>net start oracleserviceorcl<br><br>net start oracleoradb11g_home1tnslistener<br><br>pause<br></strong></p>
 <p><strong>如果需要使用Database Control -orcl(浏览器登录)，则需要开启OracleDBConsoleORCL服务,通过访问<a href="https://localhost:1158/em" target="_blank" rel="external">https://localhost:1158/em</a><br></strong></p>
@@ -337,7 +435,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、本地库同步到远程库"><a href="#一、本地库同步到远程库" class="headerlink" title="一、本地库同步到远程库"></a>一、本地库同步到远程库</h3><p>步骤：<br></p>
+        <p><br></p>
+<h3 id="一、本地库同步到远程库"><a href="#一、本地库同步到远程库" class="headerlink" title="一、本地库同步到远程库"></a>一、本地库同步到远程库</h3><p>步骤：<br></p>
 <ol>
 <li>git init</li>
 <li>git remote add origin git@github.com:michaelliao/learngit.git<strong>&lt;!上面的michaelliao替换成你自己的GitHub账户名&gt;</strong></li>
@@ -395,7 +494,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一般的侧滑的实现"><a href="#一般的侧滑的实现" class="headerlink" title="一般的侧滑的实现"></a>一般的侧滑的实现</h2><ol>
+        <p><br></p>
+<h2 id="一般的侧滑的实现"><a href="#一般的侧滑的实现" class="headerlink" title="一般的侧滑的实现"></a>一般的侧滑的实现</h2><ol>
 <li>ViewGroup Menu + Content</li>
 <li>onTouchEvent</li>
 <li>MOVE:ViewGroup的leftMargin</li>
@@ -459,7 +559,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
+        <p><br></p>
+<ol>
 <li>利用本地编辑器编写博客后维护网站其他页面</li>
 <li>使用Jekyll-Bootstrap在本地测试网站功能</li>
 <li>使用Git客户端工具上传模板和页面文件</li>
