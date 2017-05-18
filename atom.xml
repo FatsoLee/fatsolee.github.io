@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-18T15:04:25.812Z</updated>
+  <updated>2017-05-18T16:14:53.001Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo+githubpage命令</title>
+    <link href="http://yoursite.com/2017/05/19/hexo+githubpage%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/05/19/hexo+githubpage命令/</id>
+    <published>2017-05-18T16:10:11.449Z</published>
+    <updated>2017-05-18T16:14:53.001Z</updated>
+    
+    <content type="html"><![CDATA[<p><br></p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li>生成和部署</li>
+</ul>
+<blockquote>
+<pre><code>C:\Users\Administrator&gt;F:
+F:\&gt;cd hexo
+
+F:\hexo&gt;hexo g
+INFO  Start processing
+INFO  Files loaded in 399 ms
+INFO  Generated: atom.xml
+INFO  Generated: content.json
+INFO  12 files generated in 346 ms
+
+F:\hexo&gt;hexo s
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/.         Press Ctrl+C to stop.
+</code></pre></blockquote>
+<ul>
+<li>命令行提交至GitHub<br><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/1.PNG" alt=""><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/2.PNG" alt=""></li>
+<li>直接运行deploy.sh文件<blockquote>
+<p>hexo generate<br><br>cp -r ../public/* ../blog/.deploy/fatsolee.github.io<br><br>cd .deploy/fatsolee.github.io<br><br>git add .<br><br>git commit -m “update”<br><br>git push origin master<br></p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;生成和部署&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;C:\Users\Ad
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>七牛配合Markdown简易使用教程</title>
@@ -44,79 +93,6 @@
 &lt;ul&gt;
 &lt;li&gt;登陆&lt;code&gt;https://www.qiniu.com/&lt;/code&gt;，注册账号&lt;/li&gt;
 &lt;li&gt;在本地创建共享文件名&lt;code&gt;qiniu data&lt;/code&gt;，移动照片到&lt;code&gt;qiniu data&lt;/code&gt;上&lt;/li
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hexo+githubpage命令</title>
-    <link href="http://yoursite.com/2017/04/29/hexo+githubpage%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2017/04/29/hexo+githubpage命令/</id>
-    <published>2017-04-29T01:54:10.861Z</published>
-    <updated>2017-04-29T01:57:11.959Z</updated>
-    
-    <content type="html"><![CDATA[<p><br></p>
-<blockquote>
-<p>生成和部署</p>
-</blockquote>
-<pre><code>C:\Users\Administrator&gt;F:
-F:\&gt;cd hexo
-
-F:\hexo&gt;hexo g
-INFO  Start processing
-INFO  Files loaded in 399 ms
-INFO  Generated: atom.xml
-INFO  Generated: content.json
-INFO  12 files generated in 346 ms
-
-F:\hexo&gt;hexo s
-INFO  Start processing
-INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
-</code></pre><p><br></p>
-<blockquote>
-<p> 本地博客更改上传时运行该脚本<br><br> 第一次才需执行下面的命令</p>
-</blockquote>
-<pre><code>cd e:/hexo/blog
-git clone https://github.com/mesalee/mesalee.github.io.git .deploy/mesalee.github.io
-</code></pre><p><br></p>
-<blockquote>
-<p>只是修改提交的话，执行下面的命令即可（进入到/blog里）<br><br>或者直接运行deploy.sh文件</p>
-</blockquote>
-<pre><code>hexo generate
-cp -r ../public/* .deploy/mesalee.github.io
-cd .deploy/mesalee.github.io
-git add .
-git commit -m &quot;update&quot;
-git push origin master
-</code></pre><p><br></p>
-<blockquote>
-<p>最后执行hexo d命令</p>
-</blockquote>
-<pre><code>F:\hexo&gt;hexo d
-INFO  Deploying: git
-INFO  Clearing .deploy_git folder...
-INFO  Copying files from public folder...
-</code></pre><h3 id="附deploy-sh书写"><a href="#附deploy-sh书写" class="headerlink" title="附deploy.sh书写"></a>附deploy.sh书写</h3><pre><code>hexo generate
-cp -r ../public/* .deploy/mesalee.github.io
-cd .deploy/mesalee.github.io
-git add .
-git commit -m &quot;update&quot;
-git push origin master
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;生成和部署&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;C:\Users\Administrator&amp;gt;F:
-F:\&amp;gt;cd hexo
-
-F:\hexo&amp;gt;hexo g
-INFO  Start pr
     
     </summary>
     
