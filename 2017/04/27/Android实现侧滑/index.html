@@ -6,17 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Lee的博客</title>
+  <title>Android实现侧滑 | Lee的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="广东技术师范学院14届">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lee的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一般的侧滑的实现
+ViewGroup Menu + Content
+onTouchEvent
+MOVE:ViewGroup的leftMargin
+UP:根据显示菜单的宽度，决定将其隐藏或者显示
+ (1)、 Scroller (2)、 LeftMargin + Thread
+
+
+自定义ViewGroup1、onMeasure决定内部View(子View)的宽和高，以及呢，自己的宽和高2、onLay">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android实现侧滑">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/Android实现侧滑/index.html">
 <meta property="og:site_name" content="Lee的博客">
-<meta property="og:description" content="广东技术师范学院14届">
+<meta property="og:description" content="一般的侧滑的实现
+ViewGroup Menu + Content
+onTouchEvent
+MOVE:ViewGroup的leftMargin
+UP:根据显示菜单的宽度，决定将其隐藏或者显示
+ (1)、 Scroller (2)、 LeftMargin + Thread
+
+
+自定义ViewGroup1、onMeasure决定内部View(子View)的宽和高，以及呢，自己的宽和高2、onLay">
+<meta property="og:updated_time" content="2017-04-29T01:57:42.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lee的博客">
-<meta name="twitter:description" content="广东技术师范学院14届">
+<meta name="twitter:title" content="Android实现侧滑">
+<meta name="twitter:description" content="一般的侧滑的实现
+ViewGroup Menu + Content
+onTouchEvent
+MOVE:ViewGroup的leftMargin
+UP:根据显示菜单的宽度，决定将其隐藏或者显示
+ (1)、 Scroller (2)、 LeftMargin + Thread
+
+
+自定义ViewGroup1、onMeasure决定内部View(子View)的宽和高，以及呢，自己的宽和高2、onLay">
   
     <link rel="alternative" href="/atom.xml" title="Lee的博客" type="application/atom+xml">
   
@@ -156,211 +181,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android实现侧滑" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/18/Markdown使用七牛图床/" class="archive-article-date">
-  	<time datetime="2017-05-18T15:02:33.880Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/18/Markdown使用七牛图床/">七牛配合Markdown简易使用教程</a>
+    <h1 class="article-title" itemprop="name">
+      Android实现侧滑
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/29/hexo+githubpage命令/" class="archive-article-date">
-  	<time datetime="2017-04-29T01:54:10.861Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/29/hexo+githubpage命令/">hexo+githubpage命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/27/软件工程/" class="archive-article-date">
-  	<time datetime="2017-04-27T13:05:45.088Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/27/软件工程/">软件工程上课笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/27/Oracle学习笔记/" class="archive-article-date">
-  	<time datetime="2017-04-27T13:03:11.406Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/27/Oracle学习笔记/">Oracle学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/27/Git使用/" class="archive-article-date">
-  	<time datetime="2017-04-27T12:58:15.539Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/27/Git使用/">Git使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/27/Android实现侧滑/" class="archive-article-date">
+        
+        <a href="/2017/04/27/Android实现侧滑/" class="archive-article-date">
   	<time datetime="2017-04-27T12:39:06.519Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/27/Android实现侧滑/">Android实现侧滑</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><br></p>
+<h2 id="一般的侧滑的实现"><a href="#一般的侧滑的实现" class="headerlink" title="一般的侧滑的实现"></a>一般的侧滑的实现</h2><ol>
+<li>ViewGroup Menu + Content</li>
+<li>onTouchEvent</li>
+<li>MOVE:ViewGroup的leftMargin</li>
+<li><p>UP:根据显示菜单的宽度，决定将其隐藏或者显示<br></p>
+<p> (1)、 Scroller<br><br> (2)、 LeftMargin + Thread</p>
+</li>
+</ol>
+<h3 id="自定义ViewGroup"><a href="#自定义ViewGroup" class="headerlink" title="自定义ViewGroup"></a>自定义ViewGroup</h3><p>1、onMeasure<br><br>决定内部View(子View)的宽和高，以及呢，自己的宽和高<br><br>2、onLayout<br><br>决定子View的放置的位置<br><br>3、onTouchEvent</p>
+<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><p>允许用户设置菜单离屏幕右边的边距<br><br>1、书写xml文件，values/attr.xml<br><br>2、在布局文件中进行使用，特别注意xmlns<br><br><strong>在Android Studio 中直接xmlns:hyman=”<a href="http://schemas.android.com/apk/res-auto" target="_blank" rel="external">http://schemas.android.com/apk/res-auto</a>“</strong><br><br>3、在构造方法中（3个参数的构造方法）中获得我们设置的值<br></p>
+<h2 id="抽屉式侧滑"><a href="#抽屉式侧滑" class="headerlink" title="抽屉式侧滑"></a>抽屉式侧滑</h2><p>区别：菜单仿佛在内容区域底下<br><br>mMenuWidth<br><br>100px    mMenuWidth - 100<br>200px    mMenuWidth - 200</p>
+<p>属性动画：TraslationX<br><br>调用动画时机<br><br>ACTION_MOVE<br></p>
+<hr>
+<h2 id="QQ5-0侧滑效果"><a href="#QQ5-0侧滑效果" class="headerlink" title="QQ5.0侧滑效果"></a>QQ5.0侧滑效果</h2><p>区别1、内容区域1.0-0.7缩放效果<br>区别2、菜单的偏移量需要修改<br>区别3、菜单的显示有缩放，以及透明度变化</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/27/Android实现侧滑/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/20/GitHub上搭建博客/" class="archive-article-date">
-  	<time datetime="2017-03-20T15:57:15.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/20/GitHub上搭建博客/">GitHub 网站的维护</a>
-    </h1>
+    <a href="/2017/04/27/Git使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Git使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/20/GitHub上搭建博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GitHub 网站的维护</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -381,8 +356,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
