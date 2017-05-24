@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-24T16:28:48.688Z</updated>
+  <updated>2017-05-24T16:30:14.303Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/05/25/oracle%E9%97%AA%E5%9B%9E%E8%A1%A8/"/>
     <id>http://yoursite.com/2017/05/25/oracle闪回表/</id>
     <published>2017-05-24T16:16:38.569Z</published>
-    <updated>2017-05-24T16:28:48.688Z</updated>
+    <updated>2017-05-24T16:30:14.303Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><strong>闪回表是将表恢复到过去的某个时间点的状态，为DBA提供了一种在线、快速、便捷地恢复对表进行的修改、删除、插入等错误的操作。</strong></li>
