@@ -158,6 +158,114 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SQL语言之复杂查询与视图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SQL语言之复杂查询与视图"><a href="#SQL语言之复杂查询与视图" class="headerlink" title="SQL语言之复杂查询与视图"></a>SQL语言之复杂查询与视图</h1><p>标签（空格分隔）： 数据库</p>
+<hr>
+<p>###基本内容</p>
+<p> **1. SQL语言之子查询运用</p>
+<ol>
+<li>SQL语言之结果计算与聚集函数</li>
+<li>SQl语言之分组查询与分组过滤</li>
+<li>利用SQL语言实现关系代数操作</li>
+<li>SQL语言之视图及其应用**</li>
+</ol>
+<hr>
+<h2 id="为什么需要子查询"><a href="#为什么需要子查询" class="headerlink" title="为什么需要子查询"></a>为什么需要子查询</h2><ol>
+<li>集合成员资格<strong>((NOT)IN-子查询)</strong><br>某一元素是否是某一个集合的成员</li>
+<li>集合之间的比较<strong>(θ-Some/θ-All子查询)</strong><br>某一个集合是否包含在另一个集合</li>
+<li>集合基数的测试<strong>((NOT)EXISTS子查询)</strong><br>测试集合是否为空<br>测试集合是否存在重复元素</li>
+</ol>
+<hr>
+<h2 id="SQL语言之子查询运用"><a href="#SQL语言之子查询运用" class="headerlink" title="SQL语言之子查询运用"></a>SQL语言之子查询运用</h2><ul>
+<li>子查询：出现在where子句中的Select语句被称为子查询，子查询返回一个集合，可以通过与这个集合比较来确定另一个查询集合</li>
+<li>三种类型的子查询：(NOT)IN-子查询；(NOT)EXISTS子查询；θ-Some/θ-All子查询</li>
+<li><p>(NOT)IN子查询<br> <strong>基本语法：</strong><br> 表达式[not]in(子查询)<br> <strong>示例：</strong></p>
+<blockquote>
+<p> 列出张三、王三同学所有信息<br> select * from Student<br> where Sname in (“张三”,”王三”);</p>
+<p> 列出选修了001号课程的学生的学号和姓名<br> select S#,Sname from Student<br> where S# in (Select S# from SC where            C#=’001’);</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>θ-Some/θ-All子查询<br> <strong>基本语法：</strong><br> 表达式 θsome (子查询)<br> 表达式 θall (子查询)<br> θ是运算比较符：&lt;,&gt;,&gt;=,&lt;=,=,&lt;&gt;<br> <strong>示例：</strong></p>
+<blockquote>
+<p> 找出工资最低的教师姓名<strong>(非相关子查询)</strong><br> select Tname from Teacher<br> where Salary &lt;= all(select Salary from          Teacher)</p>
+<p> 找出张三同学成绩最低的课程号<strong>(相关子查询)</strong><br> select C# from SC,Student S<br> where Sname = “张三” and S.S# = SC.S# and<br> Score &lt;= all (select from SC wnere              <strong>S#=S.S#</strong>);</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>(NOT)EXISTS子查询 <strong>(着重使用not exists)</strong><br> <strong>基本语法：</strong><br> 表达式(NOT)EXISTS 子查询<br> <strong>示例：</strong></p>
+<blockquote>
+<p> 检索学过001号教师主讲的所有课程的所有同学的     姓名<br> =&gt;不存在有一门001号教师主讲的课程该同学没有     学过<br> select Sname from Student<br> where not exists<br> (select <em> from Course where Course.T#=’001’<br> and not exists (select </em> from SC where          S#=Student.S# and C#=Course.C#);</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h2><p>COUNT、SUM、AVG、MAX、MIN<br><strong>=&gt;聚集函数不允许用在where子句中：where子句是对每一组进行条件过滤，而不是对集合进行条件过滤</strong><br><strong>=&gt;COUNT会统计null，SUM、AVG、MAX、MIN均会忽略null</strong></p>
+<hr>
+<h2 id="SQl语言之分组查询与分组过滤"><a href="#SQl语言之分组查询与分组过滤" class="headerlink" title="SQl语言之分组查询与分组过滤"></a>SQl语言之分组查询与分组过滤</h2><p><strong>分组：</strong> SQL可以将检索到的元素按照某一条件进行分类，具有相同条件值得元组划到一个组或一个集合，同时处理多个组或集合的聚集运算</p>
+<blockquote>
+<p>Group子句</p>
+</blockquote>
+<p><strong>分组过滤：</strong> 若要对集合（即分组）进行条件过滤，即满足条件的集合/分组留下，不满足条件的集合/分组剔除。</p>
+<blockquote>
+<p>Having子句，需要有Group by子句支持，换句话，没有Group by子句，便没有Having子句</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>select 列名<br>from 表名1<br>[where 检索条件]<br>[Group by 分组条件 [Having 分组过滤条件]]；</p>
+</blockquote>
+<hr>
+<h2 id="SQL语言之视图及其应用"><a href="#SQL语言之视图及其应用" class="headerlink" title="SQL语言之视图及其应用"></a>SQL语言之视图及其应用</h2><ul>
+<li>对应概念模式的数据在SQL中被称为基本表(Table)，而对应外模式的数据称为视图(View)，视图不仅包含外模式，而且包含其E-C映象</li>
+<li>基本表是实际存储于文件中的表，基本表中的数据是需要存储的</li>
+<li>视图其数据并不存储，而是在运行中动态产生与维护的</li>
+<li>对视图数据的更改最终放映在对基本表的更改上</li>
+<li>视图需要“先定义，再使用”<blockquote>
+<p>create view view_name [(列名[,列名]…)]<br> as 子查询[with check option]<br>drop view view_name</p>
+</blockquote>
+</li>
+<li><p>SQL视图更新的可执行性</p>
+<blockquote>
+<p>1、如果视图的select目标包含聚集函数，则不能更新<br>2、如果视图select子句使用了unique或distinct，则不能更新<br>3、如果视图中包括了group by 子句，则不能更新<br>4、如果视图中包含经算术表达式计算出来的列，则不能更新<br>5、如果视图是由单个表的列构成但没有包括主键，则不能更新</p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/13/SQL语言之复杂查询与视图/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-oracle闪回表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -774,7 +882,7 @@ INFO  Hexo is running at http://localhost:4000/.         Press Ctrl+C to stop.
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Lee
+    		&copy; 2018 Lee
     	</div>
     </div>
   </div>
