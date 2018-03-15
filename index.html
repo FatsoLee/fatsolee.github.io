@@ -158,6 +158,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库完整性和安全性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库完整性和安全性"><a href="#数据库完整性和安全性" class="headerlink" title="数据库完整性和安全性"></a>数据库完整性和安全性</h1><hr>
+<h3 id="数据库完整性的概念和分类"><a href="#数据库完整性的概念和分类" class="headerlink" title="数据库完整性的概念和分类"></a>数据库完整性的概念和分类</h3><ul>
+<li><p><strong>数据库完整性</strong><br>  广义完整性：语义完整性、并发控制、安全控制、DB故障恢复<br>  狭义完整性：专指语义完整性</p>
+</li>
+<li><p><strong>DBMS自动保证完整性流程</strong></p>
+</li>
+</ul>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7.PNG" alt=""></p>
+<ul>
+<li><p><strong>完整性约束条件的一般形式</strong></p>
+<pre>Integrity Constraint ::= (O,P,A,R)
+O:数据集合
+  列、多列(元组)、元组集合
+P:谓词条件：什么样的约束
+A:触发条件：什么时候检查
+R:响应动作：不满足时怎么办</pre>
+</li>
+<li><p><strong>按约束对象分类</strong><br>  域完整性约束条件</p>
+<blockquote>
+<p>Sage&gt;15 and Sagea&lt;=40</p>
+</blockquote>
+<p>  关系完整性约束条件</p>
+<blockquote>
+<p>6&lt;=Chours/Credit&lt;=7</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="SQL语言支持如下几种约束"><a href="#SQL语言支持如下几种约束" class="headerlink" title="SQL语言支持如下几种约束"></a>SQL语言支持如下几种约束</h3><ul>
+<li><strong>静态约束</strong><br>  列完整性–域完整性约束<br><pre>create table course(C# char(3),Cname char(12),<br>Chours integer,Credit float(1) constraint<br>ctcredit check(Credit&gt;=0.0 and Credit&lt;=5.0),<br>T# char(3) reference Teacher(T#) on delete cascade );<br></pre><br>  表完整性约束–关系完整性约束</li>
+</ul>
+<ul>
+<li><p><strong>动态约束</strong></p>
+<p>  触发器</p>
+</li>
+</ul>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E8%A7%A6%E5%8F%91%E5%99%A8.PNG" alt=""></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%B8%80.PNG" alt=""><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%BA%8C.PNG" alt=""></p>
+<hr>
+<h3 id="数据库自主安全性机制"><a href="#数据库自主安全性机制" class="headerlink" title="数据库自主安全性机制"></a>数据库自主安全性机制</h3><p>DBMS将权利和用户(账户)结合在一起，形成一个访问规则表，依据该规则表可以实现对数据库的安全性控制</p>
+<pre>
+AcessRule ::= (S,O,t,P)
+S:请求主体(用户)
+O:访问对象
+t:访问权利
+P:谓词
+</pre>
+
+<p><strong>示例：</strong></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7.PNG" alt=""></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7%E8%A1%A8%E6%A0%BC.PNG" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/15/数据库完整性和安全性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-SQL语言之复杂查询与视图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -815,63 +901,10 @@ INFO  Hexo is running at http://localhost:4000/.         Press Ctrl+C to stop.
 
 
   
-    <article id="post-GitHub上搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/20/GitHub上搭建博客/">GitHub 网站的维护</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/20/GitHub上搭建博客/" class="archive-article-date">
-  	<time datetime="2017-03-20T15:57:15.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<ol>
-<li>利用本地编辑器编写博客后维护网站其他页面</li>
-<li>使用Jekyll-Bootstrap在本地测试网站功能</li>
-<li>使用Git客户端工具上传模板和页面文件</li>
-<li>Git Server会用jekyll转化你的模板，并生成静态页面</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/20/GitHub上搭建博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 

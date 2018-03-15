@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-13T09:07:54.920Z</updated>
+  <updated>2018-03-15T08:14:17.750Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/03/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7%E5%92%8C%E5%AE%89%E5%85%A8%E6%80%A7/"/>
+    <id>http://yoursite.com/2018/03/15/数据库完整性和安全性/</id>
+    <published>2018-03-15T08:36:09.618Z</published>
+    <updated>2018-03-15T08:14:17.750Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库完整性和安全性"><a href="#数据库完整性和安全性" class="headerlink" title="数据库完整性和安全性"></a>数据库完整性和安全性</h1><hr>
+<h3 id="数据库完整性的概念和分类"><a href="#数据库完整性的概念和分类" class="headerlink" title="数据库完整性的概念和分类"></a>数据库完整性的概念和分类</h3><ul>
+<li><p><strong>数据库完整性</strong><br>  广义完整性：语义完整性、并发控制、安全控制、DB故障恢复<br>  狭义完整性：专指语义完整性</p>
+</li>
+<li><p><strong>DBMS自动保证完整性流程</strong></p>
+</li>
+</ul>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7.PNG" alt=""></p>
+<ul>
+<li><p><strong>完整性约束条件的一般形式</strong></p>
+<pre>Integrity Constraint ::= (O,P,A,R)
+O:数据集合
+  列、多列(元组)、元组集合
+P:谓词条件：什么样的约束
+A:触发条件：什么时候检查
+R:响应动作：不满足时怎么办</pre>
+</li>
+<li><p><strong>按约束对象分类</strong><br>  域完整性约束条件</p>
+<blockquote>
+<p>Sage&gt;15 and Sagea&lt;=40</p>
+</blockquote>
+<p>  关系完整性约束条件</p>
+<blockquote>
+<p>6&lt;=Chours/Credit&lt;=7</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="SQL语言支持如下几种约束"><a href="#SQL语言支持如下几种约束" class="headerlink" title="SQL语言支持如下几种约束"></a>SQL语言支持如下几种约束</h3><ul>
+<li><strong>静态约束</strong><br>  列完整性–域完整性约束<br><pre>create table course(C# char(3),Cname char(12),<br>Chours integer,Credit float(1) constraint<br>ctcredit check(Credit&gt;=0.0 and Credit&lt;=5.0),<br>T# char(3) reference Teacher(T#) on delete cascade );<br></pre><br>  表完整性约束–关系完整性约束</li>
+</ul>
+<ul>
+<li><p><strong>动态约束</strong></p>
+<p>  触发器</p>
+</li>
+</ul>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E8%A7%A6%E5%8F%91%E5%99%A8.PNG" alt=""></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%B8%80.PNG" alt=""><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%BA%8C.PNG" alt=""></p>
+<hr>
+<h3 id="数据库自主安全性机制"><a href="#数据库自主安全性机制" class="headerlink" title="数据库自主安全性机制"></a>数据库自主安全性机制</h3><p>DBMS将权利和用户(账户)结合在一起，形成一个访问规则表，依据该规则表可以实现对数据库的安全性控制</p>
+<pre>
+AcessRule ::= (S,O,t,P)
+S:请求主体(用户)
+O:访问对象
+t:访问权利
+P:谓词
+</pre>
+
+<p><strong>示例：</strong></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7.PNG" alt=""></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7%E8%A1%A8%E6%A0%BC.PNG" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;数据库完整性和安全性&quot;&gt;&lt;a href=&quot;#数据库完整性和安全性&quot; class=&quot;headerlink&quot; title=&quot;数据库完整性和安全性&quot;&gt;&lt;/a&gt;数据库完整性和安全性&lt;/h1&gt;&lt;hr&gt;
+&lt;h3 id=&quot;数据库完整性的概念和分类&quot;&gt;&lt;a href=&quot;#数据库完
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
