@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-15T08:14:17.750Z</updated>
+  <updated>2018-03-24T16:01:32.500Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/03/25/android%20note/"/>
+    <id>http://yoursite.com/2018/03/25/android note/</id>
+    <published>2018-03-25T01:37:45.614Z</published>
+    <updated>2018-03-24T16:01:32.500Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="面试Android总结"><a href="#面试Android总结" class="headerlink" title="面试Android总结"></a>面试Android总结</h1><pre>
+注册广播方法：
+1. IntentFilter intentFilter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
+   registerReceiver(mBatteryInfoReceiver , intentFilter);
+
+2. registerReceiver(receiver, filter, broadcastPermission, scheduler) 
+
+</pre>
+
+
+<hr>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/android_thread.PNG" alt=""></p>
+<pre>
+andriod提供了 Handler和 Looper 来满足线程间的通信。 Handler 先进先出原则。 Looper 类用来管理特定线程内对象之间的消息交换 (MessageExchange) 。
+
+1) Looper:  一个线程可以产生一个 Looper 对象，由它来管理此线程里的 MessageQueue( 消息队列 ) 。 
+2) Handler:  你可以构造 Handler 对象来与 Looper 沟通，以便 push 新消息到 MessageQueue 里 ; 或者接收 Looper 从 Message Queue 取出 ) 所送来的消息。 
+3) Message Queue( 消息队列 ): 用来存放线程放入的消息。 
+4) 线程： UIthread  通常就是 main thread ，而 Android 启动程序时会替它建立一个 MessageQueue 。
+
+</pre>
+
+
+<hr>
+<pre>
+从架构图看，android分为几个层?
+
+Android 架构:
+Linux Kernel(Linux内核)、
+Hardware Abstraction Layer(硬件抽象层)、
+Libraries(系统运行库或者是c/c++ 核心库)、
+Application Framework(开发框架包 )、
+Applications(核心应用程序)
+
+</pre>
+
+
+<hr>
+<pre>
+android中有三种菜单：
+
+1. 选项菜单Options menus :一个Activity只能有一个选项菜单，在按下Menu键时，显示在屏幕下方。
+2. 上下文菜单Context menus :为Activity中的任何一个视图注册一个上下文菜单，“长按”出现。
+3. 
+弹出式菜单Popup menus :依赖于Activity中的某个一个视图。
+
+</pre>
+
+
+<hr>
+<pre>
+
+在Android上，如果你的应用程序有一段时间响应不够灵敏，系统会向用户显示一个对话框，这个对话框称作应用程序无响应（ANR：Application Not Responding）对话框。用户可以选择“等待”而让程序继续运行，也可以选择“强制关闭”。
+默认情况下，在android中Activity的最长执行时间是5秒，BroadcastReceiver的最长执行时间则是10秒。超出就会提示应用程序无响应（ANR：Application Not Responding）对话框。
+三种常见类型
+
+1： KeyDispatchTimeout(5 seconds) -- 主要类型
+
+按键或触摸事件在特定时间内无响应
+
+2 ： BroadcastTimeout(10 seconds)
+
+BroadcastReceiver在特定时间内无法处理完成
+
+3： ServiceTimeout(20 seconds) -- 小概率类型
+
+Service在特定的时间内无法处理完成 
+
+</pre>
+
+
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;面试Android总结&quot;&gt;&lt;a href=&quot;#面试Android总结&quot; class=&quot;headerlink&quot; title=&quot;面试Android总结&quot;&gt;&lt;/a&gt;面试Android总结&lt;/h1&gt;&lt;pre&gt;
+注册广播方法：
+1. IntentFilter intentF
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
