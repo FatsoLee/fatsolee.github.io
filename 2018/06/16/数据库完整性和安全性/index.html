@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Lee的博客</title>
+  <title>数据库完整性和安全性 | Lee的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="广东技术师范学院14届">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lee的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="数据库完整性的概念和分类 数据库完整性  广义完整性：语义完整性、并发控制、安全控制、DB故障恢复  狭义完整性：专指语义完整性  DBMS自动保证完整性流程     完整性约束条件的一般形式 Integrity Constraint ::= (O,P,A,R) O:数据集合   列、多列(元组)、元组集合 P:谓词条件：什么样的约束 A:触发条件：什么时候检查 R:响应动作：不满足时怎么办  按">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库完整性和安全性">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/数据库完整性和安全性/index.html">
 <meta property="og:site_name" content="Lee的博客">
-<meta property="og:description" content="广东技术师范学院14届">
+<meta property="og:description" content="数据库完整性的概念和分类 数据库完整性  广义完整性：语义完整性、并发控制、安全控制、DB故障恢复  狭义完整性：专指语义完整性  DBMS自动保证完整性流程     完整性约束条件的一般形式 Integrity Constraint ::= (O,P,A,R) O:数据集合   列、多列(元组)、元组集合 P:谓词条件：什么样的约束 A:触发条件：什么时候检查 R:响应动作：不满足时怎么办  按">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7.PNG">
+<meta property="og:image" content="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E8%A7%A6%E5%8F%91%E5%99%A8.PNG">
+<meta property="og:image" content="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%B8%80.PNG">
+<meta property="og:image" content="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%BA%8C.PNG">
+<meta property="og:image" content="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7.PNG">
+<meta property="og:image" content="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7%E8%A1%A8%E6%A0%BC.PNG">
+<meta property="og:updated_time" content="2018-08-05T09:22:42.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lee的博客">
-<meta name="twitter:description" content="广东技术师范学院14届">
+<meta name="twitter:title" content="数据库完整性和安全性">
+<meta name="twitter:description" content="数据库完整性的概念和分类 数据库完整性  广义完整性：语义完整性、并发控制、安全控制、DB故障恢复  狭义完整性：专指语义完整性  DBMS自动保证完整性流程     完整性约束条件的一般形式 Integrity Constraint ::= (O,P,A,R) O:数据集合   列、多列(元组)、元组集合 P:谓词条件：什么样的约束 A:触发条件：什么时候检查 R:响应动作：不满足时怎么办  按">
+<meta name="twitter:image" content="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Lee的博客" type="application/atom+xml">
   
@@ -157,296 +165,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-数据库完整性和安全性" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      数据库完整性和安全性
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/数据库完整性和安全性/" class="archive-article-date">
+
+        
+        <a href="/2018/06/16/数据库完整性和安全性/" class="archive-article-date">
   	<time datetime="2018-06-16T01:07:55.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/数据库完整性和安全性/">数据库完整性和安全性</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数据库完整性的概念和分类"><a href="#数据库完整性的概念和分类" class="headerlink" title="数据库完整性的概念和分类"></a>数据库完整性的概念和分类</h3><ul>
+<li><p><strong>数据库完整性</strong><br>  广义完整性：语义完整性、并发控制、安全控制、DB故障恢复<br>  狭义完整性：专指语义完整性</p>
+</li>
+<li><p><strong>DBMS自动保证完整性流程</strong></p>
+</li>
+</ul>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7.PNG" alt=""></p>
+<ul>
+<li><p><strong>完整性约束条件的一般形式</strong></p>
+<pre>Integrity Constraint ::= (O,P,A,R)
+O:数据集合
+  列、多列(元组)、元组集合
+P:谓词条件：什么样的约束
+A:触发条件：什么时候检查
+R:响应动作：不满足时怎么办</pre>
+</li>
+<li><p><strong>按约束对象分类</strong><br>  域完整性约束条件</p>
+<blockquote>
+<p>Sage&gt;15 and Sagea&lt;=40</p>
+</blockquote>
+<p>  关系完整性约束条件</p>
+<blockquote>
+<p>6&lt;=Chours/Credit&lt;=7</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="SQL语言支持如下几种约束"><a href="#SQL语言支持如下几种约束" class="headerlink" title="SQL语言支持如下几种约束"></a>SQL语言支持如下几种约束</h3><ul>
+<li><strong>静态约束</strong><br>  列完整性–域完整性约束<br><pre>create table course(C# char(3),Cname char(12),<br>Chours integer,Credit float(1) constraint<br>ctcredit check(Credit&gt;=0.0 and Credit&lt;=5.0),<br>T# char(3) reference Teacher(T#) on delete cascade );<br></pre><br>  表完整性约束–关系完整性约束</li>
+</ul>
+<ul>
+<li><p><strong>动态约束</strong></p>
+<p>  触发器</p>
+</li>
+</ul>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E8%A7%A6%E5%8F%91%E5%99%A8.PNG" alt=""></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%B8%80.PNG" alt=""><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%BA%8C.PNG" alt=""></p>
+<hr>
+<h3 id="数据库自主安全性机制"><a href="#数据库自主安全性机制" class="headerlink" title="数据库自主安全性机制"></a>数据库自主安全性机制</h3><p>DBMS将权利和用户(账户)结合在一起，形成一个访问规则表，依据该规则表可以实现对数据库的安全性控制</p>
+<pre>
+AcessRule ::= (S,O,t,P)
+S:请求主体(用户)
+O:访问对象
+t:访问权利
+P:谓词
+</pre>
 
-        <div class="article-info info-on-right">
-          
-          
+<p><strong>示例：</strong></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7.PNG" alt=""></p>
+<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7%E8%A1%A8%E6%A0%BC.PNG" alt=""></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/06/16/数据库完整性和安全性/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/软件工程/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/软件工程/">软件工程上课笔记</a>
-    </h1>
+  
+    <a href="/2018/06/16/软件工程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">软件工程上课笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/SQL语言之复杂查询与视图/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.432Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/SQL语言之复杂查询与视图/">SQL语言之复杂查询与视图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/oracle闪回表/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.432Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/oracle闪回表/">闪回表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Oracle学习笔记/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.431Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Oracle学习笔记/">Oracle学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Markdown使用七牛图床/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.430Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Markdown使用七牛图床/">七牛配合Markdown简易使用教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/hexo+githubpage命令/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/hexo+githubpage命令/">hexo+githubpage命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Greasy/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Greasy/">百度云文件高速下载技巧</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Git使用/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.428Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Git使用/">Git使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Android实现侧滑/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.427Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Android实现侧滑/">Android实现侧滑</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -467,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

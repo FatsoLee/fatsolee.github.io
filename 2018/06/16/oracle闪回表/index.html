@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Lee的博客</title>
+  <title>闪回表 | Lee的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="广东技术师范学院14届">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lee的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="闪回表是将表恢复到过去的某个时间点的状态，为DBA提供了一种在线、快速、便捷地恢复对表进行的修改、删除、插入等错误的操作。 与闪回查询不同，闪回查询只是得到表在过去某个时间点上的快照，并不改变表的当前状态，而闪回表则是将表及附属对象一起恢复到以前的某个时间点。 利用闪回表技术恢复表中数据的过程，实际上是对表进行DML操作的过程。Oracle自动维护与表相关联的索引、触发器、约束等，不需要DBA参">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闪回表">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/oracle闪回表/index.html">
 <meta property="og:site_name" content="Lee的博客">
-<meta property="og:description" content="广东技术师范学院14届">
+<meta property="og:description" content="闪回表是将表恢复到过去的某个时间点的状态，为DBA提供了一种在线、快速、便捷地恢复对表进行的修改、删除、插入等错误的操作。 与闪回查询不同，闪回查询只是得到表在过去某个时间点上的快照，并不改变表的当前状态，而闪回表则是将表及附属对象一起恢复到以前的某个时间点。 利用闪回表技术恢复表中数据的过程，实际上是对表进行DML操作的过程。Oracle自动维护与表相关联的索引、触发器、约束等，不需要DBA参">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-05-24T16:30:14.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lee的博客">
-<meta name="twitter:description" content="广东技术师范学院14届">
+<meta name="twitter:title" content="闪回表">
+<meta name="twitter:description" content="闪回表是将表恢复到过去的某个时间点的状态，为DBA提供了一种在线、快速、便捷地恢复对表进行的修改、删除、插入等错误的操作。 与闪回查询不同，闪回查询只是得到表在过去某个时间点上的快照，并不改变表的当前状态，而闪回表则是将表及附属对象一起恢复到以前的某个时间点。 利用闪回表技术恢复表中数据的过程，实际上是对表进行DML操作的过程。Oracle自动维护与表相关联的索引、触发器、约束等，不需要DBA参">
   
     <link rel="alternative" href="/atom.xml" title="Lee的博客" type="application/atom+xml">
   
@@ -157,338 +158,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-数据库完整性和安全性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-oracle闪回表" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/数据库完整性和安全性/">数据库完整性和安全性</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/数据库完整性和安全性/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="数据库完整性的概念和分类"><a href="#数据库完整性的概念和分类" class="headerlink" title="数据库完整性的概念和分类"></a>数据库完整性的概念和分类</h3><ul>
-<li><p><strong>数据库完整性</strong><br>  广义完整性：语义完整性、并发控制、安全控制、DB故障恢复<br>  狭义完整性：专指语义完整性</p>
-</li>
-<li><p><strong>DBMS自动保证完整性流程</strong></p>
-</li>
-</ul>
-<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%8C%E6%95%B4%E6%80%A7.PNG" alt=""></p>
-<ul>
-<li><p><strong>完整性约束条件的一般形式</strong></p>
-<pre>Integrity Constraint ::= (O,P,A,R)
-O:数据集合
-  列、多列(元组)、元组集合
-P:谓词条件：什么样的约束
-A:触发条件：什么时候检查
-R:响应动作：不满足时怎么办</pre>
-</li>
-<li><p><strong>按约束对象分类</strong><br>  域完整性约束条件</p>
-<blockquote>
-<p>Sage&gt;15 and Sagea&lt;=40</p>
-</blockquote>
-<p>  关系完整性约束条件</p>
-<blockquote>
-<p>6&lt;=Chours/Credit&lt;=7</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h3 id="SQL语言支持如下几种约束"><a href="#SQL语言支持如下几种约束" class="headerlink" title="SQL语言支持如下几种约束"></a>SQL语言支持如下几种约束</h3><ul>
-<li><strong>静态约束</strong><br>  列完整性–域完整性约束<br><pre>create table course(C# char(3),Cname char(12),<br>Chours integer,Credit float(1) constraint<br>ctcredit check(Credit&gt;=0.0 and Credit&lt;=5.0),<br>T# char(3) reference Teacher(T#) on delete cascade );<br></pre><br>  表完整性约束–关系完整性约束</li>
-</ul>
-<ul>
-<li><p><strong>动态约束</strong></p>
-<p>  触发器</p>
-</li>
-</ul>
-<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E8%A7%A6%E5%8F%91%E5%99%A8.PNG" alt=""></p>
-<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%B8%80.PNG" alt=""><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E7%A4%BA%E4%BE%8B%E4%BA%8C.PNG" alt=""></p>
-<hr>
-<h3 id="数据库自主安全性机制"><a href="#数据库自主安全性机制" class="headerlink" title="数据库自主安全性机制"></a>数据库自主安全性机制</h3><p>DBMS将权利和用户(账户)结合在一起，形成一个访问规则表，依据该规则表可以实现对数据库的安全性控制</p>
-<pre>
-AcessRule ::= (S,O,t,P)
-S:请求主体(用户)
-O:访问对象
-t:访问权利
-P:谓词
-</pre>
-
-<p><strong>示例：</strong></p>
-<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7.PNG" alt=""></p>
-<p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/%E5%AE%89%E5%85%A8%E6%80%A7%E8%A1%A8%E6%A0%BC.PNG" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/数据库完整性和安全性/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-软件工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/软件工程/">软件工程上课笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/软件工程/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<h3 id="软件工程过程"><a href="#软件工程过程" class="headerlink" title="软件工程过程"></a>软件工程过程</h3><p>一、软件工程以质量焦点为基础，分为方法，工具，过程三个研究方向。方法支撑过程和工具，过程和工具又促进方法学的研究。</p>
-<ol>
-<li>软件工程过程</li>
-<li>方法</li>
-<li>工具</li>
-</ol>
-<p>二、软件工程过程包括四种基本活动</p>
-<ol>
-<li>软件规格说明</li>
-<li>软件开发</li>
-<li>软件确认</li>
-<li>软件演进</li>
-</ol>
-<p>三、一个良好的软件工程过程具备一下特点</p>
-<ol>
-<li>易理解性</li>
-<li>可见性</li>
-<li>可接受性</li>
-<li>可支持性</li>
-<li>可靠性</li>
-</ol>
-<hr>
-<h3 id="软件开发模型"><a href="#软件开发模型" class="headerlink" title="软件开发模型"></a>软件开发模型</h3><ol>
-<li>瀑布模型</li>
-<li>快速原型模型</li>
-<li>快速应用开发模型<br><br>特点：<br><br>(1)借助构件<br><br>(2)并行开发</li>
-<li>增量模型</li>
-<li>螺旋模型<br><br>特点：<br><br>(1)风险分析<br><br>(2)迭代<br><br>每次迭代过程包括三个过程：<br><br>i：确定目标<br><br>ii：选择方案<br><br>iii：设定约束条件</li>
-<li>喷泉模型</li>
-</ol>
-<hr>
-<h3 id="软件重用的三个层次"><a href="#软件重用的三个层次" class="headerlink" title="软件重用的三个层次"></a>软件重用的三个层次</h3><p>(1)知识重用<br><br>(2)方法重用<br></p>
-<ol>
-<li>代码重用<br></li>
-<li>设计成果重用<br></li>
-<li>分析结果重用<br></li>
-</ol>
-<hr>
-<h3 id="系统工程"><a href="#系统工程" class="headerlink" title="系统工程"></a>系统工程</h3><p>定义：关注目标系统各种相关要素的分析，设计，并将其组成有机的系统<br><br>计算机系统主要组成成分：软件，硬件，人员，数据库，文档，过程；</p>
-<hr>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ol>
-<li>基于计算机的系统的基本组成包括什么？<br><br>答：软件，硬件，人员，数据库，文档，过程</li>
-<li>可行性研究主要关注哪些方面？<br><br>答：<br><br>(1)风险分析<br><br>(2)资源分析<br><br>(3)技术分析<br></li>
-<li>经济效益的度量包括哪三个方面，如何计算？<br>答：<br><br>(1)投入/产出比<br><br>(2)投资回收期<br><br>(3)纯收入<br></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/软件工程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-SQL语言之复杂查询与视图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/SQL语言之复杂查询与视图/">SQL语言之复杂查询与视图</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/SQL语言之复杂查询与视图/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.432Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>标签： 数据库</p>
-<hr>
-<p><strong>基本内容</strong></p>
-<ol>
-<li>SQL语言之子查询运用</li>
-<li>SQL语言之结果计算与聚集函数</li>
-<li>SQl语言之分组查询与分组过滤</li>
-<li>利用SQL语言实现关系代数操作</li>
-<li>SQL语言之视图及其应用</li>
-</ol>
-<hr>
-<h2 id="为什么需要子查询"><a href="#为什么需要子查询" class="headerlink" title="为什么需要子查询"></a>为什么需要子查询</h2><ol>
-<li>集合成员资格<strong>((NOT)IN-子查询)</strong><br><br>某一元素是否是某一个集合的成员</li>
-<li>集合之间的比较<strong>(θ-Some/θ-All子查询)</strong><br><br>某一个集合是否包含在另一个集合</li>
-<li>集合基数的测试<strong>((NOT)EXISTS子查询)</strong><br><br>测试集合是否为空<br>测试集合是否存在重复元素</li>
-</ol>
-<hr>
-<h2 id="SQL语言之子查询运用"><a href="#SQL语言之子查询运用" class="headerlink" title="SQL语言之子查询运用"></a>SQL语言之子查询运用</h2><ul>
-<li>子查询：出现在where子句中的Select语句被称为子查询，子查询返回一个集合，可以通过与这个集合比较来确定另一个查询集合</li>
-<li>三种类型的子查询：(NOT)IN-子查询；(NOT)EXISTS子查询；θ-Some/θ-All子查询</li>
-<li><p>(NOT)IN子查询<br> <strong>基本语法：</strong><br> 表达式[not]in(子查询)<br> <strong>示例：</strong></p>
-<blockquote>
-</blockquote>
-<p> 列出张三、王三同学所有信息<br> select * from Student<br> where Sname in (“张三”,”王三”);</p>
-<blockquote>
-</blockquote>
-<p> 列出选修了001号课程的学生的学号和姓名<br> select S#,Sname from Student<br> where S# in (Select S# from SC where            C#=’001’);</p>
-</li>
-</ul>
-<ul>
-<li><p>θ-Some/θ-All子查询<br> <strong>基本语法：</strong><br> 表达式 θsome (子查询)<br> 表达式 θall (子查询)<br> θ是运算比较符：&lt;,&gt;,&gt;=,&lt;=,=,&lt;&gt;<br> <strong>示例：</strong></p>
-<blockquote>
-</blockquote>
-<p> 找出工资最低的教师姓名<strong>(非相关子查询)</strong><br> select Tname from Teacher<br> where Salary &lt;= all(select Salary from          Teacher)</p>
-<blockquote>
-</blockquote>
-<p> 找出张三同学成绩最低的课程号<strong>(相关子查询)</strong><br> select C# from SC,Student S<br> where Sname = “张三” and S.S# = SC.S# and<br> Score &lt;= all (select from SC wnere              <strong>S#=S.S#</strong>);</p>
-</li>
-</ul>
-<ul>
-<li><p>(NOT)EXISTS子查询 <strong>(着重使用not exists)</strong><br> <strong>基本语法：</strong><br> 表达式(NOT)EXISTS 子查询<br> <strong>示例：</strong></p>
-<blockquote>
-</blockquote>
-<p> 检索学过001号教师主讲的所有课程的所有同学的     姓名<br> =&gt;不存在有一门001号教师主讲的课程该同学没有     学过<br> select Sname from Student<br> where not exists<br> (select <em> from Course where Course.T#=’001’<br> and not exists (select </em> from SC where          S#=Student.S# and C#=Course.C#);</p>
-</li>
-</ul>
-<hr>
-<h2 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h2><p>COUNT、SUM、AVG、MAX、MIN<br><strong>=&gt;聚集函数不允许用在where子句中：where子句是对每一组进行条件过滤，而不是对集合进行条件过滤</strong><br><strong>=&gt;COUNT会统计null，SUM、AVG、MAX、MIN均会忽略null</strong></p>
-<hr>
-<h2 id="SQl语言之分组查询与分组过滤"><a href="#SQl语言之分组查询与分组过滤" class="headerlink" title="SQl语言之分组查询与分组过滤"></a>SQl语言之分组查询与分组过滤</h2><p><strong>分组：</strong> SQL可以将检索到的元素按照某一条件进行分类，具有相同条件值得元组划到一个组或一个集合，同时处理多个组或集合的聚集运算</p>
-<blockquote>
-</blockquote>
-<p>Group子句</p>
-<p><strong>分组过滤：</strong> 若要对集合（即分组）进行条件过滤，即满足条件的集合/分组留下，不满足条件的集合/分组剔除。</p>
-<blockquote>
-</blockquote>
-<p>Having子句，需要有Group by子句支持，换句话，没有Group by子句，便没有Having子句</p>
-<hr>
-<blockquote>
-</blockquote>
-<p>select 列名<br>from 表名1<br>[where 检索条件]<br>[Group by 分组条件 [Having 分组过滤条件]]；</p>
-<hr>
-<h2 id="SQL语言之视图及其应用"><a href="#SQL语言之视图及其应用" class="headerlink" title="SQL语言之视图及其应用"></a>SQL语言之视图及其应用</h2><ul>
-<li>对应概念模式的数据在SQL中被称为基本表(Table)，而对应外模式的数据称为视图(View)，视图不仅包含外模式，而且包含其E-C映象</li>
-<li>基本表是实际存储于文件中的表，基本表中的数据是需要存储的</li>
-<li>视图其数据并不存储，而是在运行中动态产生与维护的</li>
-<li>对视图数据的更改最终放映在对基本表的更改上</li>
-<li>视图需要“先定义，再使用”<blockquote>
-</blockquote>
-create view view_name [(列名[,列名]…)]<br> as 子查询[with check option]<br>drop view view_name</li>
-<li><p>SQL视图更新的可执行性</p>
-<blockquote>
-</blockquote>
-<p>1、如果视图的select目标包含聚集函数，则不能更新<br>2、如果视图select子句使用了unique或distinct，则不能更新<br>3、如果视图中包括了group by 子句，则不能更新<br>4、如果视图中包含经算术表达式计算出来的列，则不能更新<br>5、如果视图是由单个表的列构成但没有包括主键，则不能更新</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/SQL语言之复杂查询与视图/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-oracle闪回表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/oracle闪回表/">闪回表</a>
+    <h1 class="article-title" itemprop="name">
+      闪回表
     </h1>
   
 
@@ -523,69 +200,26 @@ create view view_name [(列名[,列名]…)]<br> as 子查询[with check option]
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/oracle闪回表/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Oracle学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/Oracle学习笔记/">Oracle学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/Oracle学习笔记/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.431Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<blockquote>
-<p><strong>一般使用Oracle，，只需要启动这两个服务：OracleServiceORCL和OracleOraDb11g_home1TNSListener<br></strong></p>
-<p><strong><em>简易方法：将以下代码保存成”.bat“文件或”.cmd“文件,直接打开服务</em></strong><br><br><strong>@echo off<br><br>net start oracleserviceorcl<br><br>net start oracleoradb11g_home1tnslistener<br><br>pause<br></strong></p>
-<p><strong>如果需要使用Database Control -orcl(浏览器登录)，则需要开启OracleDBConsoleORCL服务,通过访问<a href="https://localhost:1158/em" target="_blank" rel="noopener">https://localhost:1158/em</a><br></strong></p>
-</blockquote>
-<p><br></p>
-<blockquote>
-<p><strong>SQL Plus登陆两种方法：</strong></p>
-</blockquote>
-<ol>
-<li>用户名：system<br><br>口令：oracle1994</li>
-<li>用户名：sys<br><br>口令：oracle1994 as sysdba</li>
-</ol>
-
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -594,81 +228,83 @@ create view view_name [(列名[,列名]…)]<br> as 子查询[with check option]
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/Oracle学习笔记/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/06/16/oracle闪回表/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
-
-
-
   
-    <article id="post-Markdown使用七牛图床" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2018/06/16/SQL语言之复杂查询与视图/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/Markdown使用七牛图床/">七牛配合Markdown简易使用教程</a>
-    </h1>
-  
-
+          SQL语言之复杂查询与视图
         
-        <a href="/2018/06/16/Markdown使用七牛图床/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.430Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<ul>
-<li>登陆<code>https://www.qiniu.com/</code>，注册账号</li>
-<li>在本地创建共享文件名<code>qiniu data</code>，移动照片到<code>qiniu data</code>上</li>
-<li>下载图形化工具<code>qrsbox</code></li>
-<li>运行<code>qrsbox.exe</code><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/qiniu_config.jpg" alt=""><blockquote>
-</blockquote>
-1、个人面板-&gt;密匙管理，查看自己AccessKey和SecretKey<br><br>2、同步源目录填写本地创建好的共享文件名，格式：<code>e:/qiniu data</code><br><br>3、空间名，会影响外链（url），例如我填写<code>tutorial/</code><br><br>图片url：<code>http://外链默认域名/tutorial/图片名称</code></li>
-</ul>
-<ul>
-<li>登陆<code>https://www.qiniu.com/</code>，个人面板-&gt;个人中心-&gt;产品列表-&gt;内容管理，点击操作-&gt;复制外链</li>
-<li>Markdown使用：<code>![](图片外链)</code></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/Markdown使用七牛图床/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/16/Oracle学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Oracle学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -676,268 +312,10 @@ create view view_name [(列名[,列名]…)]<br> as 子查询[with check option]
 
 
   
-    <article id="post-hexo+githubpage命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/hexo+githubpage命令/">hexo+githubpage命令</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2018/06/16/hexo+githubpage命令/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
-<li>生成和部署</li>
-</ul>
-<blockquote>
-<pre><code>C:\Users\Administrator&gt;F:
-F:\&gt;cd hexo
 
-F:\hexo&gt;hexo g
-INFO  Start processing
-INFO  Files loaded in 399 ms
-INFO  Generated: atom.xml
-INFO  Generated: content.json
-INFO  12 files generated in 346 ms
-
-F:\hexo&gt;hexo s
-INFO  Start processing
-INFO  Hexo is running at http://localhost:4000/.         Press Ctrl+C to stop.
-</code></pre></blockquote>
-<ul>
-<li>命令行提交至GitHub<br><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/1.PNG" alt=""><br><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/2.PNG" alt=""></li>
-<li>直接运行deploy.sh文件<blockquote>
-<p>hexo generate<br><br>cp -r ../public/* ../blog/.deploy/fatsolee.github.io<br><br>cd .deploy/fatsolee.github.io<br><br>git add .<br><br>git commit -m “update”<br><br>git push origin master<br></p>
-</blockquote>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/hexo+githubpage命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Greasy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/Greasy/">百度云文件高速下载技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/Greasy/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Greasemonkey</strong> + <strong>百度网盘直接下载助手</strong> + <strong>idm</strong></p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="1、进入网址https-greasyfork-org-zh-CN-安装一个对应浏览器的用户脚本管理器"><a href="#1、进入网址https-greasyfork-org-zh-CN-安装一个对应浏览器的用户脚本管理器" class="headerlink" title="1、进入网址https://greasyfork.org/zh-CN/安装一个对应浏览器的用户脚本管理器"></a>1、进入网址<code>https://greasyfork.org/zh-CN/</code>安装一个对应浏览器的用户脚本管理器</h4><p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/greasymonkey_1.png" alt=""></p>
-<h4 id="2、在搜索栏上搜索百度网盘直接下载助手"><a href="#2、在搜索栏上搜索百度网盘直接下载助手" class="headerlink" title="2、在搜索栏上搜索百度网盘直接下载助手"></a>2、在搜索栏上搜索百度网盘直接下载助手</h4><p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/greasymonkey_2.png" alt=""></p>
-<h4 id="3、下载Internet-Download-Manager-IDM-或者迅雷下载，绕过百度云客户端下载"><a href="#3、下载Internet-Download-Manager-IDM-或者迅雷下载，绕过百度云客户端下载" class="headerlink" title="3、下载Internet Download Manager(IDM)或者迅雷下载，绕过百度云客户端下载"></a>3、下载<strong>Internet Download Manager(IDM)</strong>或者<strong>迅雷下载</strong>，绕过百度云客户端下载</h4><p><br><br><br></p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><h4 id="1、在百度云盘网页端选择下载的文件，点击分享"><a href="#1、在百度云盘网页端选择下载的文件，点击分享" class="headerlink" title="1、在百度云盘网页端选择下载的文件，点击分享"></a>1、在百度云盘网页端选择下载的文件，点击分享</h4><p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/greasymonkey_3.png" alt=""></p>
-<h4 id="2、复制url，在浏览器中打开"><a href="#2、复制url，在浏览器中打开" class="headerlink" title="2、复制url，在浏览器中打开"></a>2、复制url，在浏览器中打开</h4><p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/greasymonkey_4.png" alt=""></p>
-<h4 id="3、在IDM中下载-断点下载，速度比较快"><a href="#3、在IDM中下载-断点下载，速度比较快" class="headerlink" title="3、在IDM中下载(断点下载，速度比较快)"></a>3、在IDM中下载(断点下载，速度比较快)</h4><p><img src="http://oq37kzxdi.bkt.clouddn.com/tutorial/greasymonkey_5.PNG" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/Greasy/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Git使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/Git使用/">Git使用</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/Git使用/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.428Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<h3 id="一、本地库同步到远程库"><a href="#一、本地库同步到远程库" class="headerlink" title="一、本地库同步到远程库"></a>一、本地库同步到远程库</h3><p>步骤：<br></p>
-<ol>
-<li>git init</li>
-<li>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:michaelliao/learngit.git<strong>&lt;!上面的michaelliao替换成你自己的GitHub账户名&gt;</strong></li>
-<li>git push -u origin master<strong>&lt;!第一次推送master分支的所有内容&gt;</strong></li>
-<li>git push origin master<strong>&lt;!此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改&gt;</strong></li>
-<li>修改Git remote add时使用的远程仓库<br><br><strong>git remote rm origin<br><br> git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:Liutos/foobar.git</strong></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/Git使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android实现侧滑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/Android实现侧滑/">Android实现侧滑</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/Android实现侧滑/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.427Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<h2 id="一般的侧滑的实现"><a href="#一般的侧滑的实现" class="headerlink" title="一般的侧滑的实现"></a>一般的侧滑的实现</h2><ol>
-<li>ViewGroup Menu + Content</li>
-<li>onTouchEvent</li>
-<li>MOVE:ViewGroup的leftMargin</li>
-<li><p>UP:根据显示菜单的宽度，决定将其隐藏或者显示<br></p>
-<p> (1)、 Scroller<br><br> (2)、 LeftMargin + Thread</p>
-</li>
-</ol>
-<h3 id="自定义ViewGroup"><a href="#自定义ViewGroup" class="headerlink" title="自定义ViewGroup"></a>自定义ViewGroup</h3><p>1、onMeasure<br><br>决定内部View(子View)的宽和高，以及呢，自己的宽和高<br><br>2、onLayout<br><br>决定子View的放置的位置<br><br>3、onTouchEvent</p>
-<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><p>允许用户设置菜单离屏幕右边的边距<br><br>1、书写xml文件，values/attr.xml<br><br>2、在布局文件中进行使用，特别注意xmlns<br><br><strong>在Android Studio 中直接xmlns:hyman=”<a href="http://schemas.android.com/apk/res-auto&quot;" target="_blank" rel="noopener">http://schemas.android.com/apk/res-auto&quot;</a></strong><br><br>3、在构造方法中（3个参数的构造方法）中获得我们设置的值<br></p>
-<h2 id="抽屉式侧滑"><a href="#抽屉式侧滑" class="headerlink" title="抽屉式侧滑"></a>抽屉式侧滑</h2><p>区别：菜单仿佛在内容区域底下<br><br>mMenuWidth<br><br>100px    mMenuWidth - 100<br>200px    mMenuWidth - 200</p>
-<p>属性动画：TraslationX<br><br>调用动画时机<br><br>ACTION_MOVE<br></p>
-<hr>
-<h2 id="QQ5-0侧滑效果"><a href="#QQ5-0侧滑效果" class="headerlink" title="QQ5.0侧滑效果"></a>QQ5.0侧滑效果</h2><p>区别1、内容区域1.0-0.7缩放效果<br>区别2、菜单的偏移量需要修改<br>区别3、菜单的显示有缩放，以及透明度变化</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/Android实现侧滑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -957,8 +335,8 @@ INFO  Hexo is running at http://localhost:4000/.         Press Ctrl+C to stop.
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

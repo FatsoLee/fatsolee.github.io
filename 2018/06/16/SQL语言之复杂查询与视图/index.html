@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Lee的博客</title>
+  <title>SQL语言之复杂查询与视图 | Lee的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="广东技术师范学院14届">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lee的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="标签： 数据库  基本内容  SQL语言之子查询运用 SQL语言之结果计算与聚集函数 SQl语言之分组查询与分组过滤 利用SQL语言实现关系代数操作 SQL语言之视图及其应用   为什么需要子查询 集合成员资格((NOT)IN-子查询)某一元素是否是某一个集合的成员 集合之间的比较(θ-Some/θ-All子查询)某一个集合是否包含在另一个集合 集合基数的测试((NOT)EXISTS子查询)测试集">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL语言之复杂查询与视图">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/SQL语言之复杂查询与视图/index.html">
 <meta property="og:site_name" content="Lee的博客">
-<meta property="og:description" content="广东技术师范学院14届">
+<meta property="og:description" content="标签： 数据库  基本内容  SQL语言之子查询运用 SQL语言之结果计算与聚集函数 SQl语言之分组查询与分组过滤 利用SQL语言实现关系代数操作 SQL语言之视图及其应用   为什么需要子查询 集合成员资格((NOT)IN-子查询)某一元素是否是某一个集合的成员 集合之间的比较(θ-Some/θ-All子查询)某一个集合是否包含在另一个集合 集合基数的测试((NOT)EXISTS子查询)测试集">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-05T09:22:30.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lee的博客">
-<meta name="twitter:description" content="广东技术师范学院14届">
+<meta name="twitter:title" content="SQL语言之复杂查询与视图">
+<meta name="twitter:description" content="标签： 数据库  基本内容  SQL语言之子查询运用 SQL语言之结果计算与聚集函数 SQl语言之分组查询与分组过滤 利用SQL语言实现关系代数操作 SQL语言之视图及其应用   为什么需要子查询 集合成员资格((NOT)IN-子查询)某一元素是否是某一个集合的成员 集合之间的比较(θ-Some/θ-All子查询)某一个集合是否包含在另一个集合 集合基数的测试((NOT)EXISTS子查询)测试集">
   
     <link rel="alternative" href="/atom.xml" title="Lee的博客" type="application/atom+xml">
   
@@ -157,296 +158,222 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SQL语言之复杂查询与视图" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/数据库完整性和安全性/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/数据库完整性和安全性/">数据库完整性和安全性</a>
+    <h1 class="article-title" itemprop="name">
+      SQL语言之复杂查询与视图
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/软件工程/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.433Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/软件工程/">软件工程上课笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/SQL语言之复杂查询与视图/" class="archive-article-date">
+        
+        <a href="/2018/06/16/SQL语言之复杂查询与视图/" class="archive-article-date">
   	<time datetime="2018-06-16T01:07:55.432Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/SQL语言之复杂查询与视图/">SQL语言之复杂查询与视图</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>标签： 数据库</p>
+<hr>
+<p><strong>基本内容</strong></p>
+<ol>
+<li>SQL语言之子查询运用</li>
+<li>SQL语言之结果计算与聚集函数</li>
+<li>SQl语言之分组查询与分组过滤</li>
+<li>利用SQL语言实现关系代数操作</li>
+<li>SQL语言之视图及其应用</li>
+</ol>
+<hr>
+<h2 id="为什么需要子查询"><a href="#为什么需要子查询" class="headerlink" title="为什么需要子查询"></a>为什么需要子查询</h2><ol>
+<li>集合成员资格<strong>((NOT)IN-子查询)</strong><br><br>某一元素是否是某一个集合的成员</li>
+<li>集合之间的比较<strong>(θ-Some/θ-All子查询)</strong><br><br>某一个集合是否包含在另一个集合</li>
+<li>集合基数的测试<strong>((NOT)EXISTS子查询)</strong><br><br>测试集合是否为空<br>测试集合是否存在重复元素</li>
+</ol>
+<hr>
+<h2 id="SQL语言之子查询运用"><a href="#SQL语言之子查询运用" class="headerlink" title="SQL语言之子查询运用"></a>SQL语言之子查询运用</h2><ul>
+<li>子查询：出现在where子句中的Select语句被称为子查询，子查询返回一个集合，可以通过与这个集合比较来确定另一个查询集合</li>
+<li>三种类型的子查询：(NOT)IN-子查询；(NOT)EXISTS子查询；θ-Some/θ-All子查询</li>
+<li><p>(NOT)IN子查询<br> <strong>基本语法：</strong><br> 表达式[not]in(子查询)<br> <strong>示例：</strong></p>
+<blockquote>
+</blockquote>
+<p> 列出张三、王三同学所有信息<br> select * from Student<br> where Sname in (“张三”,”王三”);</p>
+<blockquote>
+</blockquote>
+<p> 列出选修了001号课程的学生的学号和姓名<br> select S#,Sname from Student<br> where S# in (Select S# from SC where            C#=’001’);</p>
+</li>
+</ul>
+<ul>
+<li><p>θ-Some/θ-All子查询<br> <strong>基本语法：</strong><br> 表达式 θsome (子查询)<br> 表达式 θall (子查询)<br> θ是运算比较符：&lt;,&gt;,&gt;=,&lt;=,=,&lt;&gt;<br> <strong>示例：</strong></p>
+<blockquote>
+</blockquote>
+<p> 找出工资最低的教师姓名<strong>(非相关子查询)</strong><br> select Tname from Teacher<br> where Salary &lt;= all(select Salary from          Teacher)</p>
+<blockquote>
+</blockquote>
+<p> 找出张三同学成绩最低的课程号<strong>(相关子查询)</strong><br> select C# from SC,Student S<br> where Sname = “张三” and S.S# = SC.S# and<br> Score &lt;= all (select from SC wnere              <strong>S#=S.S#</strong>);</p>
+</li>
+</ul>
+<ul>
+<li><p>(NOT)EXISTS子查询 <strong>(着重使用not exists)</strong><br> <strong>基本语法：</strong><br> 表达式(NOT)EXISTS 子查询<br> <strong>示例：</strong></p>
+<blockquote>
+</blockquote>
+<p> 检索学过001号教师主讲的所有课程的所有同学的     姓名<br> =&gt;不存在有一门001号教师主讲的课程该同学没有     学过<br> select Sname from Student<br> where not exists<br> (select <em> from Course where Course.T#=’001’<br> and not exists (select </em> from SC where          S#=Student.S# and C#=Course.C#);</p>
+</li>
+</ul>
+<hr>
+<h2 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h2><p>COUNT、SUM、AVG、MAX、MIN<br><strong>=&gt;聚集函数不允许用在where子句中：where子句是对每一组进行条件过滤，而不是对集合进行条件过滤</strong><br><strong>=&gt;COUNT会统计null，SUM、AVG、MAX、MIN均会忽略null</strong></p>
+<hr>
+<h2 id="SQl语言之分组查询与分组过滤"><a href="#SQl语言之分组查询与分组过滤" class="headerlink" title="SQl语言之分组查询与分组过滤"></a>SQl语言之分组查询与分组过滤</h2><p><strong>分组：</strong> SQL可以将检索到的元素按照某一条件进行分类，具有相同条件值得元组划到一个组或一个集合，同时处理多个组或集合的聚集运算</p>
+<blockquote>
+</blockquote>
+<p>Group子句</p>
+<p><strong>分组过滤：</strong> 若要对集合（即分组）进行条件过滤，即满足条件的集合/分组留下，不满足条件的集合/分组剔除。</p>
+<blockquote>
+</blockquote>
+<p>Having子句，需要有Group by子句支持，换句话，没有Group by子句，便没有Having子句</p>
+<hr>
+<blockquote>
+</blockquote>
+<p>select 列名<br>from 表名1<br>[where 检索条件]<br>[Group by 分组条件 [Having 分组过滤条件]]；</p>
+<hr>
+<h2 id="SQL语言之视图及其应用"><a href="#SQL语言之视图及其应用" class="headerlink" title="SQL语言之视图及其应用"></a>SQL语言之视图及其应用</h2><ul>
+<li>对应概念模式的数据在SQL中被称为基本表(Table)，而对应外模式的数据称为视图(View)，视图不仅包含外模式，而且包含其E-C映象</li>
+<li>基本表是实际存储于文件中的表，基本表中的数据是需要存储的</li>
+<li>视图其数据并不存储，而是在运行中动态产生与维护的</li>
+<li>对视图数据的更改最终放映在对基本表的更改上</li>
+<li>视图需要“先定义，再使用”<blockquote>
+</blockquote>
+create view view_name [(列名[,列名]…)]<br> as 子查询[with check option]<br>drop view view_name</li>
+<li><p>SQL视图更新的可执行性</p>
+<blockquote>
+</blockquote>
+<p>1、如果视图的select目标包含聚集函数，则不能更新<br>2、如果视图select子句使用了unique或distinct，则不能更新<br>3、如果视图中包括了group by 子句，则不能更新<br>4、如果视图中包含经算术表达式计算出来的列，则不能更新<br>5、如果视图是由单个表的列构成但没有包括主键，则不能更新</p>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/06/16/SQL语言之复杂查询与视图/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/oracle闪回表/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.432Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/oracle闪回表/">闪回表</a>
-    </h1>
+    <a href="/2018/06/16/软件工程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          软件工程上课笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/16/oracle闪回表/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">闪回表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Oracle学习笔记/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.431Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Oracle学习笔记/">Oracle学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Markdown使用七牛图床/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.430Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Markdown使用七牛图床/">七牛配合Markdown简易使用教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/hexo+githubpage命令/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/hexo+githubpage命令/">hexo+githubpage命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Greasy/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.429Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Greasy/">百度云文件高速下载技巧</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Git使用/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.428Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Git使用/">Git使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/Android实现侧滑/" class="archive-article-date">
-  	<time datetime="2018-06-16T01:07:55.427Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/Android实现侧滑/">Android实现侧滑</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -467,8 +394,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
